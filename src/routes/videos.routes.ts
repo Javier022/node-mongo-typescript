@@ -6,7 +6,7 @@ router.get("/videos", videoController.getVideos);
 
 router.get("/videos/:id", videoController.getAVideo);
 
-router.post("/videos", videoController.createVideo);
+router.post("/create-video", videoController.createVideo);
 
 router.put("/videos/:id", videoController.updateVideo);
 

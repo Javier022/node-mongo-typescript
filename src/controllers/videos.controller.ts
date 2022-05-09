@@ -9,7 +9,7 @@ export const getVideos: RequestHandler = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: getAllVideos,
+      data: getAllVideos,
     });
   } catch (error) {
     res.status(500).send(error);
@@ -22,6 +22,8 @@ export const getAVideo: RequestHandler = async (req, res) => {
   try {
     dbConnection();
     const foundVideo = await Video.findById(id);
+
+    console.log(foundVideo);
 
     if (!foundVideo) {
       return res.status(204).json({
